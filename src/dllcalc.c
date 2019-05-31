@@ -15,6 +15,6 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL,DWORD fdwReason, LPVOID lpvReserved)
 
 //compile with 
 /*
-i686-w64-mingw32-g++ -c -DBUILDING_EXAMPLE_DLL main.cpp
-i686-w64-mingw32-g++ -shared -o main.dll main.o -Wl,--out-implib,main.a
+i686-w64-mingw32-g++ -c -DBUILDING_EXAMPLE_DLL ../src/dllcalc.c
+686-w64-mingw32-g++ -shared -o dllcalc.dll dllcalc.o -Wl,--out-implib,dllcalc.a
 */
